@@ -1,0 +1,56 @@
+@use "utilities" as u;
+
+.msz-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &--page {
+    max-width: 900px;
+  }
+}
+
+body {
+  padding: 100px 20px;
+}
+
+.users-list {
+  &__add-button {
+    margin-bottom: 20px;
+  }
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.message {
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 32px;
+
+  &#{&}--success {
+    border: 2px solid u.$green500;
+    background: u.$green300;
+    color: u.$green500;
+  }  
+  
+  &#{&}--error {
+    border: 2px solid u.$red500;
+    background: u.$red300;
+    color: u.$red500;
+  }
+}

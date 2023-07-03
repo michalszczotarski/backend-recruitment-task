@@ -1,18 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Backend/Full-stack recruitment task</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+<?php
+require_once('inc/header.php');
 
-<body>
+$action = null;
 
-<main>
-    <?php require_once './partials/main.php'; ?>
-</main>
+if (isset($_GET['action'])) $action = $_GET['action'];
 
-<script src="assets/js/script.js"></script>
-</body>
-</html>
+switch ($action) {
+    case 'add':
+        include_once('inc/model/model-add-user.php');
+        break;
+    default:
+        include_once('inc/model/model-users-list.php');
+        break;
+
+}
+
+
+switch ($action) {
+    case 'add':
+        include_once('inc/view/add-user.php');
+        break;
+    default:
+        include_once('inc/view/users-list.php');
+        break;
+}
+?>
+
+<?php
+require_once('inc/footer.php');
+?>
